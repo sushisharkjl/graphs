@@ -1,8 +1,9 @@
-#include "prims.h"
+#include "kruskal.h"
+#include "../graphs.h"
 
-using prims::Node;
-using prims::UndirectedEdge;
-using prims::calc_prims_mst;
+using graphs::Node;
+using graphs::UndirectedEdge;
+using kruskal::CalcKruskalMst;
 
 int main() {
 
@@ -52,7 +53,7 @@ int main() {
     edges->push_back(e_k);
     edges->push_back(e_l);
 
-    auto mst = calc_prims_mst(nodes, edges);
+    auto mst = CalcKruskalMst(nodes, edges);
 
     for (auto edge : *mst) {
         std::cout << *edge << std::endl;
